@@ -1,4 +1,4 @@
-$(document).ready(function () {
+function initDialogBox() {
  
     // if user clicked on button, the overlay layer or the dialogbox, close the dialog  
     $('a.btn-ok, #dialog-overlay, #dialog-box').click(function () {     
@@ -15,7 +15,7 @@ $(document).ready(function () {
     }); 
      
      
-});
+}
  
 //Popup dialog
 function popup(message) {
