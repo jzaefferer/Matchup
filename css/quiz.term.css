@@ -1,0 +1,47 @@
+.termquiz {
+	font-size: 3em;
+}
+
+.termquiz-terms,
+.termquiz-definitions {
+	width: 20em;
+	height: 2.8em;
+	margin: 1em auto;
+	padding: .2em;
+	border-radius: .4em;
+	border: 2px solid #000;
+}
+.termquiz-terms {
+	background-color: #ffd;
+}
+.termquiz-definitions {
+	background-color: #ddf;
+}
+
+.termquiz-term,
+.termquiz-definition {
+	position: relative;
+	left: 0px;
+	top: 0px;
+	float: left;
+	margin: .2em;
+	padding: .2em;
+	width: 2em;
+	height: 2em;
+	line-height: 2em;
+	border-radius: .2em;
+}
+.termquiz-term {
+	background-color: #ccc;
+	color: #fff;
+	text-shadow: 0 0 5px #000;
+	border: 2px solid #000;
+}
+.termquiz-definition {
+	background-color: #fff;
+	color: #333;
+	border: 2px dashed #000;
+}
+.termquiz-definition-hover {
+	background-color: green;
+}

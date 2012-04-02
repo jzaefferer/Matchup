@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Matchup Term Quiz</title>
+
+	<link rel="stylesheet" href="../css/quiz.term.css">
+	<script src="../external/jquery-1.7.1.js"></script>
+	<script src="../external/jquery.ui.core.js"></script>
+	<script src="../external/jquery.ui.widget.js"></script>
+	<script src="../external/jquery.ui.interaction.js"></script>
+	<script src="../external/jquery.ui.draggable.js"></script>
+	<script src="../external/jquery.ui.droppable.js"></script>
+	<script src="../js/quiz.term.js"></script>
+	<script>
+	$(function() {
+		$( "#quiz" ).termQuiz({
+			terms: [
+				{ term: "bir", definition: "one" },
+				{ term: "iki", definition: "two" },
+				{ term: "üç", definition: "three" },
+				{ term: "dört", definition: "four" },
+				{ term: "beş", definition: "five" },
+				{ term: "altı" }
+			]
+		});
+		$( "#check" ).click(function() {
+			var incorrect = $( "#quiz" ).termQuiz( "check" );
+			if ( !incorrect ) {
+				alert( "good job" );
+			}
+		});
+	});
+	</script>
+</head>
+<body>
+
+<div id="quiz"></div>
+<button id="check">check answers</button>
+
+</body>
+</html>
