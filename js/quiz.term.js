@@ -70,7 +70,7 @@ $.widget( "quiz.termQuiz", {
 					return true;
 				}
 
-				return term.data( "term" ) !== definition.data( "term" );
+				return term.data( "term" ) !== definition.data( "term" );		// incorrect
 			})
 			// map to incorrect terms
 			.map(function() {
