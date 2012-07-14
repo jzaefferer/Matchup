@@ -1,10 +1,10 @@
 .termquiz {
-	font-size: 3em;
+	font-size: 2.5em;
 }
 
 .termquiz-terms,
 .termquiz-definitions {
-	width: 20em;
+	width: 28em;
 	height: 2.8em;
 	margin: 1em auto;
 	padding: .2em;
@@ -26,9 +26,10 @@
 	float: left;
 	margin: .2em;
 	padding: .2em;
-	width: 2em;
+	width: 3em;
 	height: 2em;
 	line-height: 2em;
+	text-align: center;
 	border-radius: .2em;
 }
 .termquiz-term {
