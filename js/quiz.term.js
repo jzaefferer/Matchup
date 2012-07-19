@@ -2,11 +2,13 @@
 
 $.widget( "quiz.termQuiz", {
 	options: {
+		randomize: "terms",
 		terms: null
 	},
 
 	_create: function() {
 		var i, length, term,
+			randomize = this.options.randomize,
 			terms = this.options.terms;
 
 		this.element.addClass( "termquiz" );
@@ -39,17 +41,21 @@ $.widget( "quiz.termQuiz", {
 			// randomize order of terms
 			.children()
 				.sort(function() {
-					return Math.random() > .5 ? 1 : -1;
+					return randomize !== "terms" ? 0 : Math.random() > 0.5 ? 1 : -1;
 				})
 				.appendTo( this.terms )
 				.each(function() {
-					$( this ).data( "offset", $( this ).offset() )
+					$( this ).data( "offset", $( this ).offset() );
 				})
 				.draggable();
 
 		this.definitions
 			.appendTo( this.element )
 			.children()
+				.sort(function() {
+					return randomize !== "definitions" ? 0 : Math.random() > 0.5 ? 1 : -1;
+				})
+				.appendTo( this.definitions )
 				.droppable({
 					accept: ".termquiz-term"
 				});
