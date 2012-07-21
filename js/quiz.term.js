@@ -2,6 +2,7 @@
 
 $.widget( "quiz.termQuiz", {
 	options: {
+		layout: "horizontal",
 		randomize: "terms",
 		terms: null
 	},
@@ -11,7 +12,7 @@ $.widget( "quiz.termQuiz", {
 			randomize = this.options.randomize,
 			terms = this.options.terms;
 
-		this.element.addClass( "termquiz" );
+		this.element.addClass( "termquiz"  ).addClass( "termquiz-" + this.options.layout );
 
 		// create terms and definitions
 		// delay initializing draggable and droppable until the elements are in the DOM

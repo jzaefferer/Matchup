@@ -46,3 +46,22 @@
 .termquiz-definition-hover {
 	background-color: green;
 }
+
+.termquiz-vertical {
+	position: relative;
+	height: 22em;
+}
+.termquiz-vertical .termquiz-term, .termquiz-vertical .termquiz-definition {
+	float: none;
+}
+.termquiz-vertical .termquiz-terms, .termquiz-vertical .termquiz-definitions {
+	width: 4em;
+	height: auto;
+	position: absolute;
+	left: 50%;
+	top: 0;
+	margin-left: -5em;
+}
+.termquiz-vertical .termquiz-definitions {
+	margin-left: 1em;
+}

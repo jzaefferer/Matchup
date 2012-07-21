@@ -24,8 +24,8 @@
 				{ term: "altı" },
 				{ term: "yedi" }
 			],
-			randomize: "terms"
-			// randomize: "definitions"
+			// randomize: "definitions",
+			layout: "vertical"
 		});
 		$( "#check" ).click(function() {
 			var incorrect = $( "#quiz" ).termQuiz( "check" );
@@ -40,7 +40,7 @@
 </head>
 <body>
 
-<h3>Drag from the top row to correct positions on the bottom row</h3>
+<h3>Drag from the top/left row to correct positions on the bottom/right row</h3>
 <div id="quiz"></div>
 <center><button id="check">check answers</button></center>
 
