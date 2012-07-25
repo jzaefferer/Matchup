@@ -1,5 +1,27 @@
 (function( $ ) {
 
+$.fn.textfill = function(options) {
+	var defaults = {
+		maxFontPixels: 40,
+		innerTag: 'span'
+	};
+	var Opts = jQuery.extend(defaults, options);
+	return this.each(function() {
+		var fontSize = Opts.maxFontPixels;
+		var ourText = $(Opts.innerTag + ':visible:first', this);
+		var maxHeight = $(this).height();
+		var maxWidth = $(this).width();
+		var textHeight;
+		var textWidth;
+		do {
+			ourText.css('font-size', fontSize);
+			textHeight = ourText.height();
+			textWidth = ourText.width();
+			fontSize = fontSize - 1;
+		} while ((textHeight > maxHeight || textWidth > maxWidth) && fontSize > 3);
+	});
+};
+
 $.widget( "quiz.termQuiz", {
 	options: {
 		layout: "horizontal",
@@ -45,6 +67,7 @@ $.widget( "quiz.termQuiz", {
 					return randomize !== "terms" ? 0 : Math.random() > 0.5 ? 1 : -1;
 				})
 				.appendTo( this.terms )
+				.textfill()
 				.each(function() {
 					$( this ).data( "offset", $( this ).offset() );
 				})
@@ -64,6 +87,7 @@ $.widget( "quiz.termQuiz", {
 					return randomize !== "definitions" ? 0 : Math.random() > 0.5 ? 1 : -1;
 				})
 				.appendTo( this.definitions )
+				.textfill()
 				.droppable({
 					accept: ".termquiz-term"
 				});
@@ -154,14 +178,14 @@ $.widget( "quiz.termQuiz", {
 		return $( "<div>", {
 			"class": "termquiz-term",
 			text: term
-		});
+		}).wrapInner( "<span>" );
 	},
 
 	_renderDefinition: function( definition ) {
 		return $( "<div>", {
 			"class": "termquiz-definition",
 			text: definition
-		});
+		}).wrapInner( "<span>" );
 	},
 
 	// move the active draggable to the top of all draggables

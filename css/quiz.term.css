@@ -4,10 +4,10 @@
 
 .termquiz-terms,
 .termquiz-definitions {
-	width: 28em;
-	height: 2.8em;
-	margin: 1em auto;
-	padding: .2em;
+	width: 1120px;
+	height: 112px;
+	margin: 40px auto;
+	padding: 8px;
 	border-radius: .4em;
 	border: 2px solid #000;
 	text-align: center;
@@ -25,13 +25,13 @@
 	left: 0px;
 	top: 0px;
 	display: inline-block;
-	margin: .2em;
-	padding: .2em;
-	width: 3em;
-	height: 2em;
+	margin: 8px;
+	padding: 8px;
+	width: 120px;
+	height: 80px;
 	line-height: 2em;
 	text-align: center;
-	border-radius: .2em;
+	border-radius: 8px;
 }
 .termquiz-term {
 	background-color: #ccc;
