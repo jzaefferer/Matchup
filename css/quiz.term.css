@@ -10,6 +10,7 @@
 	padding: .2em;
 	border-radius: .4em;
 	border: 2px solid #000;
+	text-align: center;
 }
 .termquiz-terms {
 	background-color: #ffd;
@@ -23,7 +24,7 @@
 	position: relative;
 	left: 0px;
 	top: 0px;
-	float: left;
+	display: inline-block;
 	margin: .2em;
 	padding: .2em;
 	width: 3em;
@@ -55,9 +56,6 @@
 .termquiz-vertical {
 	position: relative;
 	height: 22em;
-}
-.termquiz-vertical .termquiz-term, .termquiz-vertical .termquiz-definition {
-	float: none;
 }
 .termquiz-vertical .termquiz-terms, .termquiz-vertical .termquiz-definitions {
 	width: 4em;
