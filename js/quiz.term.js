@@ -48,7 +48,14 @@ $.widget( "quiz.termQuiz", {
 				.each(function() {
 					$( this ).data( "offset", $( this ).offset() );
 				})
-				.draggable();
+				.draggable({
+					start: function( event, ui ) {
+						$( this ).addClass( "termquiz-dragging" );
+					},
+					stop: function( event, ui ) {
+						$( this ).removeClass( "termquiz-dragging" );
+					}
+				});
 
 		this.definitions
 			.appendTo( this.element )
