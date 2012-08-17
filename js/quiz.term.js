@@ -83,9 +83,7 @@ $.widget( "quiz.termQuiz", {
 				})
 				.appendTo( this.definitions )
 				.textfill()
-				.droppable({
-					accept: ".termquiz-term"
-				});
+				.droppable();
 
 		this._bind( this._events );
 	},
@@ -103,11 +101,12 @@ $.widget( "quiz.termQuiz", {
 					return true;
 				}
 
-				return term.data( "term" ) !== definition.data( "term" );		// incorrect
+				// incorrect
+				return term.data( "term" ) !== definition.data( "term" );
 			})
 			// map to incorrect terms
 			.map(function() {
-				return $( this ).droppable( "enable" ).data( "guess" )
+				return $( this ).droppable( "enable" ).data( "guess" );
 			})
 			// move back to original position
 			.each(function() {
@@ -156,7 +155,8 @@ $.widget( "quiz.termQuiz", {
 				.data( "guess", ui.draggable )
 				.removeClass( "termquiz-definition-hover" )
 				.droppable( "disable" );
-			ui.draggable
+			// this can be the nested span
+			ui.draggable.closest( ".ui-draggable" )
 				.data( "guess", droppable )
 				.one( "dragstart", function() {
 					droppable.droppable( "enable" );
