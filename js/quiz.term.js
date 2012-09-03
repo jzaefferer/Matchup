@@ -150,13 +150,15 @@ $.widget( "quiz.termQuiz", {
 			$( event.target ).removeClass( "termquiz-definition-hover" );
 		},
 		"drop .termquiz-definition": function( event, ui ) {
-			var droppable = $( event.target );
+			var droppable = $( event.target ),
+				// this can be the nested span
+				draggable = ui.draggable.closest( ".ui-draggable" );
 			droppable
-				.data( "guess", ui.draggable )
+				.data( "guess", draggable )
 				.removeClass( "termquiz-definition-hover" )
 				.droppable( "disable" );
-			// this can be the nested span
-			ui.draggable.closest( ".ui-draggable" )
+			
+			draggable
 				.data( "guess", droppable )
 				.one( "dragstart", function() {
 					droppable.droppable( "enable" );
